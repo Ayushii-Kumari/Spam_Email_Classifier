@@ -1,15 +1,11 @@
-import email
-from flask import Flask,render_template,request
-import pickle 
-
-cv = pickle.load(open("cv.pkl","rb"))
-clf = pickle.load(open("clf.pkl","rb"))
-
+from flask import Flask, render_template, request, jsonify
+from utils import model_predict
 app = Flask(__name__)
 
-@app.route('/')
-def EmailSpamClassifier():
-    return render_template("EmailSpamClassifier.html")
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 
 @app.route('/predict', methods=['POST'])
