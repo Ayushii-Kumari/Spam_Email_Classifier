@@ -2,8 +2,8 @@ import email
 from flask import Flask,render_template,request
 import pickle 
 
-cv = pickle.load(open("models/cv.pkl","rb"))
-clf = pickle.load(open("models/clf.pkl","rb"))
+cv = pickle.load(open("cv.pkl","rb"))
+clf = pickle.load(open("clf.pkl","rb"))
 
 app = Flask(__name__)
 
